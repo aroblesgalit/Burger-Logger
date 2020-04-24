@@ -17,8 +17,8 @@ const orm = {
         });
     },
 
-    updateOne: function(devoured, id) {
-        connection.query("UPDATE burgers SET devoured = ? WHERE id = ?", [devoured, id], function(err) {
+    updateOne: function(id) {
+        connection.query("UPDATE burgers SET devoured = true WHERE id = ?", [id], function(err) {
             if (err) throw err;
             console.log("Burger devoured!");
         });
